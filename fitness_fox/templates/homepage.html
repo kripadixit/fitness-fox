@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="Fitness Fox" content="">
+  <meta name="Team 11" content="">
+
+  <title>Fitness Fox Homepage</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- social media icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400i" rel="stylesheet">
+
+ <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400i" rel="stylesheet">
+  
+  
+  <!-- Custom styles for homepage -->
+  <link href="homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <img class="img-fluid d-block mx-auto" src="../static/logo.png" alt="logo" width="75" height="75" align="left">
+      <a class="navbar-brand" href="#" style="font-family: 'IBM Plex Sans Condensed', sans-serif; font-weight: 700; font-size: 2em; color: red;">FITNESS FOX</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          {% if user != "" %}
+          <li class="nav-item">
+            <a class="nav-link" href="/Chart.html">My Workouts</a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="/homepage.html#resources">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/homepage.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/homepage.html#contact">Contact</a>
+          </li>
+
+          {% if user == "" %}
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login | Register</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header - set the background image for the header in the line below -->
+  <header class="py-5 bg-image-full" style="background-image: url(../static/headerphoto.png); margin-top:80px; height:300px;">
+    <!--<img class="img-fluid d-block mx-auto" src="../static/logo.png" alt="logo" width="250" height="250">-->
+  </header>
+
+  <!-- Content section -->
+  <section class="py-5">
+    <div class="container">
+      <h1>Get Fit With Fitness Fox!</h1>
+      <p class="lead">How it works.</p>
+      <p>Committing to 75 minutes of vigorous or 150 minutes of mild exercise per week leads to a happier, healthier life! Meeting this goal is easy with Fitness Fox! We will guide and encourage you along the way! Start by simply selecting the exercise type you've done and the duration.</p>
+    </div>
+  </section>
+  
+
+  <div class="container marginTop8pc">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel-body">
+          <div class="row marginBottom3pc">
+            <i class="fa fa-info-circle fa-3x floatLeft swlOrangeLight" style="color: #ff1e00;"></i><h1 class="floatLeft marginTop12px marginLeft10px darkGray fontSize20px fontStyleNormal fontWeight500">What is Fitness Fox?</h1>
+          </div>
+          <p class="fontSize16px">Fitness Fox is designed to replace your paper workout journal. After listening to users who were disappointed by the selection of workout tracking apps, it combines the best features found in other apps with a minimalistic approach and a clean, easy-to-use interface. Give it a try. We know you'll love it!</p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel-body">
+          <div class="row marginBottom3pc">
+            <i class="fa fa-heart fa-3x floatLeft swlOrangeLight" style="color: #ff1e00;"></i><h1 class="floatLeft marginTop12px marginLeft10px darkGray fontSize20px fontStyleNormal fontWeight500">Why people love it</h1>
+          </div>
+          <p class="fontSize16px">We've been able to put together a great combination of simplicity, usability, and features. Because of this, Fitness Fox has become one of the most popular workout tracking apps.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel-body">
+          <div class="row marginBottom3pc">
+            <i class="fa fa-thumbs-up fa-3x floatLeft swlOrangeLight" style="color: #ff1e00;"></i><h1 class="floatLeft marginTop12px marginLeft10px darkGray fontSize20px fontStyleNormal fontWeight500">How we beat the rest</h1>
+          </div>
+          <p class="fontSize16px">Other workout apps take a simple thing and over complicate it. We believe that a workout log should do just what it says: log your workout, without getting in your way, or slowing you down.</p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel-body">
+          <div class="row marginBottom3pc">
+            <i class="fa fa-tachometer fa-3x floatLeft swlOrangeLight" style="color: #ff1e00;"></i><h1 class="floatLeft marginTop12px marginLeft10px darkGray fontSize20px fontStyleNormal fontWeight500">Simple yet powerful</h1>
+          </div>
+          <p class="fontSize16px">Fitness Fox has many features others don't have such as a summary page with stats from previous workouts, visual graphics showing progress to meet goals, and much more.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+  <div style="height: 20px;"></div>
+  <a name="resources"></a>
+  <!-- Image Section - set the background image for the header in the line below -->
+  <section class="py-5 bg-image-full" style="background-image: url(../static/2.JPG); height:160px;">
+    <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+
+    <div style="height: 200px;"></div>
+  </section>
+
+  <!-- Content section -->
+  <section class="py-5">
+    
+    <div class="container">
+      <h1>Resources To Help Reach Your Fitness Goals!</h1>
+      <p class="lead">These links will help you create a balanced workout and nutrition plan.</p>
+      <div id="links">
+        <a href="https://www.healthline.com/nutrition/50-super-healthy-foods">Healthy Foods</a><br />
+        <a href="https://www.mensjournal.com/health-fitness/best-workout-ever-according-science/">Best Workouts</a><br />
+        <a href="https://www.health.harvard.edu/blog/healthy-lifestyle-5-keys-to-a-longer-life-2018070514186">Healthy Lifestyle</a><br />
+        <a href="https://www.healthline.com/nutrition/how-many-calories-per-day">Count your Calories</a><br />
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Section - set the background image for the header in the line below -->
+  <section class="py-5 bg-image-full" style="background-image: url(../static/3.JPG); height:160px;">
+    <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
+    <div style="height: 200px;"></div>
+  </section>
+
+  <!-- Content section -->
+  <section class="py-5">
+    <div class="container">
+      <a name="about"></a>
+      <h1>About Our Company</h1>
+      <p class="lead">Helping You Achieve Healthier Lifestyle</p>
+      <p>Fitness Fox provides users a simple way to track time spent working out. By logging exercise type and time spend, you can visually see progress over time. Fitness Fox is here as a helpful friend to guide and motivate you towards your goals. Consistent exercise reduces stress and in combination with a sensible diet will improve overall health for a longer, happier life.</p>
+    </div>
+  </section>
+
+  <!-- Content section -->
+  <section class="py-5">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="lead">Fitness Fox started as a student project at Texas A&M in 2019, but quickly grew into a buzzing community of employees and users.</p>
+      <div class="icon-bar">
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="google"><i class="fa fa-google"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <div id="tryItNow">
+    <a type="button" class="btn btn-danger btn-lg btn-block" href="login.html" role="button">GIVE FITNESS FOX A TRY TODAY!!</a>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; 2019 | Team 11</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../static/jquery.min.js"></script>
+  <script src="../static/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
