@@ -72,11 +72,13 @@ def postRegister():
 @app.route('/Logout.html/', methods=['GET'])
 def logout():
 	log["username"] = ""
+	user = ""
 	return render_template('Logout.html')
 
 @app.route('/AdminLogout.html/', methods=['GET'])
 def adminLogout():
 	log["username"] = ""
+	user =""
 	return render_template('AdminLogout.html')
 
 @app.route('/AddActivity.html', methods=['POST'])
