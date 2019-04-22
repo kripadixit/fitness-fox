@@ -144,7 +144,7 @@ def postmanagerView():
 	to_date = datetime.strptime(to_date, '%Y-%m-%d').date()
 	
 	#user = db.session.query(User, Workout).join(Workout).filter(Workout.dateDb <= to_date).filter(Workout.dateDb >= from_date).order_by(Workout.dateDb).all()
-	user = db.session.query(Workout, User).join(Workout).all()
+	user = db.session.query(Workout, User).join(Workout).filter(Workout.dateDb <= to_date).filter(Workout.dateDb >= from_date).order_by(Workout.dateDb).all()
 	for row in user:
 		print (row.Workout.minutesDb)
 	#user = db.session.query(User).all()
