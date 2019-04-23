@@ -36,7 +36,7 @@ def postlogin():
 
 	userDb = User.query.filter_by(emailDb=username).first()
 	print (userDb)
-	if userDb == None:
+	if userDb == None or userDb.passwordDb != password:
 		error = 'Invalid Credentials. Please try again.'
 		return render_template('login.html', error = error)
 	log["username"] = username
