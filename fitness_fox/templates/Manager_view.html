@@ -11,13 +11,13 @@
 
   <title>Fitness Fox</title>
   <link rel= "stylesheet" type="text/css" href="/static/Manager_view.css"/>
+  <!--  Bootstrap generated code begins-->
   <!-- Bootstrap core CSS -->
   <link href="../static/bootstrap/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!--&lt;!&ndash; social media icons &ndash;&gt;
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
--->
+
+
 <!-- Custom styles for homepage -->
 <link href="/static/homepage.css" rel="stylesheet">
 <title>Fitness Fox</title>
@@ -46,6 +46,7 @@
     $( "#to" ).datepicker();
   } );
 </script>
+<!--  Bootstrap generated code ends-->
 </head>
 
 
@@ -68,16 +69,16 @@
       </div>
     </div>
   </nav>
+<!--  Navigation ends-->
 
-
-  <!-- Header - set the background image for the header in the line below -->
+  <!-- Bootstrap generated section begins -->
   <header class="py-5 bg-image-full" >
 
   </header>
 
+  <!-- Bootstrap generated section ends -->
 
-
-  <!-- Content section -->
+  <!-- Content section is manually written-->
   <section class="py-5">
     <div class="container">
 
@@ -96,15 +97,18 @@
             <p class="activity"><label for ="a">From Date:</label> <input type="date" required name="from_date" /> </p>
 
             <div id="contents" >
+                <!-- Spacing is hardcoded but is responsive on mobile and tablet devices -->
               <p class="activity"><label for ="a">&nbsp&nbsp&nbsp&nbsp&nbspTo Date:</label> <input type="date" required name="to_date" /> </p>
               <br>
               <button type="submit" class="btn btn-success" name = "submit"  >View User Log</button> 
               <br>
               <br>
               <br>
+  <!-- Table section begins -->
               <table class="table table-striped">
                 <thead id="first_row">
                  <tr>
+    <!-- Table header elements -->
                   <th scope="col">Email</th>
                   <th scope="col">FirstName</th>
                   <th scope="col">LastName</th>
@@ -116,6 +120,7 @@
               <tbody>
                 {% for row in myUser %}
                 <tr>
+      <!-- Table row items -->
                   <td>{{row.User.emailDb }} </td>
                   <td>{{row.User.firstnameDb }} </td>
                   <td>{{row.User.lastnameDb }} </td>
@@ -143,20 +148,21 @@
     </div>
 
   </section>
-  <!-- Footer -->
+  <!-- Footer begins-->
   <div class="footer">
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; 2019 | Team 11</p>
       </div>
-      <!-- /.container -->
+    
     </footer>
   </div>
-
+    <!-- Footer ends -->
+  <!-- Bootstrap generated section begins -->
   <!-- Bootstrap core JavaScript -->
   <script src="../static/bootstrap/jquery/jquery.min.js"></script>
   <script src="../static/bootstrap/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <!-- Bootstrap generated section ends -->
 </body>
 
 </html>

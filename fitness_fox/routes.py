@@ -1,3 +1,9 @@
+""" This module is responsible for performing all 
+	the routing requirements of our application.
+	It takes care of all the events that occur
+	in application.
+ """
+
 from flask import render_template, request
 from datetime import datetime
 from datetime import timedelta
@@ -11,18 +17,22 @@ import sqlalchemy as sa
 from flask_bootstrap import Bootstrap
 from flask import Flask, render_template, redirect, url_for, request
 
+# declare dictionary for login
 log = {"username" : ""}
 
+# load the Add activity page
 @app.route('/AddActivity.html')
 def setValue():
 	if log["username"] == "":
 		return redirect(url_for('getlogin'))
 	return render_template('AddActivity3.html')
 
+# Display user login
 @app.route('/login.html/', methods=['GET'])
 def getlogin():
 	return render_template('login.html')
 
+# Check user details and direct to User page. if user is an admin direct him to the manager view
 @app.route('/login.html/', methods=['POST'])
 def postlogin():
 	
@@ -43,10 +53,12 @@ def postlogin():
 	print (log["username"])
 	return redirect(url_for('view'))
 
+# Display registeration page
 @app.route('/register.html/', methods=['GET'])
 def getRegister():
 	return render_template('register.html')
 
+# Fetch user sign up details and direct them to User class
 @app.route('/register.html/', methods=['POST'])
 def postRegister():
 
@@ -69,16 +81,19 @@ def postRegister():
 
 	return redirect(url_for('successRegistationPage'))
 
+# Display Log out page
 @app.route('/Logout.html/', methods=['GET'])
 def logout():
 	log["username"] = ""
 	return render_template('Logout.html')
 
+# Display admin log out page
 @app.route('/AdminLogout.html/', methods=['GET'])
 def adminLogout():
 	log["username"] = ""
 	return render_template('AdminLogout.html')
 
+# Get the user workout details from the webpagee Add Activity and direct them to the Workout class
 @app.route('/AddActivity.html', methods=['POST'])
 def getValue():
 	if log["username"] == "":
@@ -96,12 +111,14 @@ def getValue():
 	db.session.commit()
 	return render_template('Success1.html')
 
+# Display the homepage
 @app.route('/')
 @app.route('/homepage.html')
 def homepage():
 	myUser = log["username"]
 	return render_template('homepage.html', user = myUser)
 
+# Display user activity chart or if no one is logged in  go to the login page
 @app.route('/Chart.html')
 def view():
 	if log["username"] == "":
@@ -117,22 +134,26 @@ def view():
 	   labels.append(c.dateDb.strftime("%Y-%m-%d"))
 	return render_template('Chart.html', max=90, values=values, labels=labels)
 
+# Display activity addition success page or if no one is logged in  go to the login page
 @app.route('/Success.html')
 def successPage():
 	if log["username"] == "":
 		return redirect(url_for('getlogin'))
 	return render_template('Success1.html')
 
+# Display registration success page
 @app.route('/SuccessRegistration.html')
 def successRegistationPage():
 	return render_template('SuccessRegistration.html')
 
+# If the user name is set to admin direct to manager view page
 @app.route('/ManagerView.html/', methods=['GET'])
 def getmanagerView():
 	if log["username"] == "":
 		return redirect(url_for('getlogin'))
 	return render_template('Manager_view.html')
 
+# Get date range from Manager view and show the results
 @app.route('/ManagerView.html/', methods=['POST'])
 def postmanagerView():
 	if log["username"] == "":
