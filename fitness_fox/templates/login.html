@@ -49,22 +49,26 @@
 
                 </form>
 
-            </div>
+                {% if error %}
+                <p class="error" style="color:white;"><strong>Error:</strong> {{ error }}
+                    {% endif %}
 
-        </div><!-- tab-content -->
+                </div>
 
-    </div> <!-- /form -->
+            </div><!-- tab-content -->
 
-    <script>
-        function submit() {
-          /*Put all the data posting code here*/
-          document.getElementById("myForm").reset();
-      }
-  </script>
+        </div> <!-- /form -->
 
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script  src="../static/loginregister.js"></script>
+        <script>
+            function submit() {
+              /*Put all the data posting code here*/
+              document.getElementById("myForm").reset();
+          }
+      </script>
 
-</body>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+      <script  src="../static/loginregister.js"></script>
 
-</html>
+  </body>
+
+  </html>
